@@ -5,12 +5,16 @@ import {
   Search, 
   Thermometer,
   Eye,
-  Activity
+  Activity,
+  MapPin
 } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import robotImage from "@assets/image_1755069128744.png";
 import conveyorImage from "@assets/image_1755069138987.png";
 import scannerImage from "@assets/image_1755069151056.png";
+import surveyRobotImage from "@assets/image_1755069412818.png";
+import surveyProcessImage from "@assets/image_1755069426916.png";
+import surveyEquipmentImage from "@assets/image_1755069446687.png";
 
 export default function ProjectsShowcase() {
   const projects = [
@@ -58,6 +62,23 @@ export default function ProjectsShowcase() {
       image: scannerImage,
       company: "Turan Telematika",
       status: "В разработке"
+    },
+    {
+      icon: MapPin,
+      title: "Автоматизированная маркшейдерская съемка",
+      subtitle: "Шахтных пространств с роботизированным комплексом MAPK-1",
+      description: "Решение для горнодобывающих предприятий при нехватке маркшейдеров. Автоматизация маркшейдерской съемки с использованием технологии объемных твердых точек лазерного сканирования.",
+      features: [
+        "Лазерное сканирование для повышения безопасности в опасных зонах",
+        "Повышение информативности маркшейдерской съемки",
+        "Привязка к действующей системе координат заказчика",
+        "Получение данных в стандартных форматах (.bin, .txt, .las, .dxf и др.)",
+        "Более точный расчет объемов и сопоставление план-факт",
+        "3D-визуализация и оперативное измерение параметров"
+      ],
+      image: surveyRobotImage,
+      company: "Turan Telematika",
+      status: "Активный"
     }
   ];
 
@@ -112,11 +133,32 @@ export default function ProjectsShowcase() {
                     <div className="grid lg:grid-cols-2 gap-0">
                       {/* Project Image */}
                       <div className="relative overflow-hidden">
-                        <img 
-                          src={project.image} 
-                          alt={project.title}
-                          className="w-full h-80 lg:h-full object-cover"
-                        />
+                        {index === 3 ? (
+                          // Special gallery for survey project
+                          <div className="grid grid-cols-2 gap-2 p-4 bg-mining-dark">
+                            <img 
+                              src={surveyRobotImage} 
+                              alt="MAPK-1 Robot"
+                              className="w-full h-40 object-cover rounded-lg"
+                            />
+                            <img 
+                              src={surveyProcessImage} 
+                              alt="Survey Process"
+                              className="w-full h-40 object-cover rounded-lg"
+                            />
+                            <img 
+                              src={surveyEquipmentImage} 
+                              alt="Equipment"
+                              className="w-full h-40 object-cover rounded-lg col-span-2"
+                            />
+                          </div>
+                        ) : (
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-80 lg:h-full object-cover"
+                          />
+                        )}
                         <div className="absolute top-4 right-4">
                           <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
                             {project.status}
@@ -146,7 +188,9 @@ export default function ProjectsShowcase() {
                         </p>
                         
                         <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-mining-orange">Ключевые возможности:</h4>
+                          <h4 className="text-lg font-semibold text-mining-orange">
+                            {index === 3 ? "Преимущества технологии:" : "Ключевые возможности:"}
+                          </h4>
                           {project.features.map((feature, featureIndex) => (
                             <div 
                               key={featureIndex}
@@ -156,6 +200,20 @@ export default function ProjectsShowcase() {
                               <span className="text-gray-300">{feature}</span>
                             </div>
                           ))}
+                          
+                          {index === 3 && (
+                            <div className="mt-6 p-4 bg-mining-orange/10 rounded-lg border border-mining-orange/20">
+                              <h5 className="text-mining-orange font-semibold mb-2">MAPK-1 Преимущества:</h5>
+                              <div className="grid grid-cols-2 gap-2 text-sm text-gray-300">
+                                <div>• Более точный расчет объемов</div>
+                                <div>• Сопоставление плана и факта</div>
+                                <div>• Определение отклонений</div>
+                                <div>• Расчет объема переотбойки</div>
+                                <div>• Оперативное измерение</div>
+                                <div>• 3D-визуализация</div>
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
