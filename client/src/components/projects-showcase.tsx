@@ -135,23 +135,29 @@ export default function ProjectsShowcase() {
                       <div className="relative overflow-hidden">
                         {index === 3 ? (
                           // Special scrollable gallery for survey project
-                          <div className="h-80 lg:h-full bg-mining-dark p-4">
-                            <div className="flex gap-3 h-full overflow-x-auto scrollbar-thin scrollbar-thumb-mining-orange scrollbar-track-mining-light">
+                          <div className="h-80 lg:h-full bg-mining-dark relative">
+                            <div className="flex gap-0 h-full overflow-x-auto scrollbar-thin scrollbar-thumb-mining-orange scrollbar-track-mining-light snap-x snap-mandatory">
                               <img 
                                 src={surveyRobotImage} 
                                 alt="MAPK-1 Robot"
-                                className="flex-shrink-0 w-64 h-full object-cover rounded-lg"
+                                className="flex-shrink-0 w-full h-full object-cover snap-start"
                               />
                               <img 
                                 src={surveyProcessImage} 
                                 alt="Survey Process"
-                                className="flex-shrink-0 w-64 h-full object-cover rounded-lg"
+                                className="flex-shrink-0 w-full h-full object-cover snap-start"
                               />
                               <img 
                                 src={surveyEquipmentImage} 
                                 alt="Equipment"
-                                className="flex-shrink-0 w-64 h-full object-cover rounded-lg"
+                                className="flex-shrink-0 w-full h-full object-cover snap-start"
                               />
+                            </div>
+                            {/* Navigation dots */}
+                            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                              <div className="w-2 h-2 bg-mining-orange rounded-full opacity-80"></div>
+                              <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                              <div className="w-2 h-2 bg-white/40 rounded-full"></div>
                             </div>
                           </div>
                         ) : (
