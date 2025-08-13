@@ -13,7 +13,6 @@ import {
   GraduationCap
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import nazarbayevLogo from "@assets/image_1755070509295.png";
 
 export default function MemberCompanies() {
   const companies = [
@@ -66,13 +65,6 @@ export default function MemberCompanies() {
       name: "Redline Digital",
       icon: Cpu,
       description: "Передовые решения по электронному оборудованию для шахт: сенсоры, системы связи и автоматизации"
-    },
-    {
-      name: "Nazarbayev University",
-      icon: GraduationCap,
-      description: "Ведущий исследовательский университет Казахстана, партнер в области научных исследований и подготовки кадров для цифровой трансформации промышленности",
-      logo: nazarbayevLogo,
-      isSpecial: true
     }
   ];
 
@@ -112,19 +104,9 @@ export default function MemberCompanies() {
                 <Card className="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 h-full">
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
-                      {company.isSpecial && company.logo ? (
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 bg-white p-1">
-                          <img 
-                            src={company.logo} 
-                            alt={company.name}
-                            className="w-full h-full object-contain"
-                          />
-                        </div>
-                      ) : (
-                        <div className="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                          <IconComponent className="text-black" size={24} />
-                        </div>
-                      )}
+                      <div className="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <IconComponent className="text-black" size={24} />
+                      </div>
                       <h3 className="text-xl font-bold gradient-text">
                         {company.name}
                       </h3>

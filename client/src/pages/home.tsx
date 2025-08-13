@@ -5,6 +5,7 @@ import DigitalTrends from "../components/digital-trends";
 import KeyObjectives from "../components/key-objectives";
 import MemberCompanies from "../components/member-companies";
 import ProjectsShowcase from "../components/projects-showcase";
+import Partnership from "../components/partnership";
 import Benefits from "../components/benefits";
 
 import Footer from "../components/footer";
@@ -19,6 +20,7 @@ export default function Home() {
       <KeyObjectives />
       <MemberCompanies />
       <ProjectsShowcase />
+      <Partnership />
       <Benefits />
 
       <Footer />
