@@ -134,25 +134,23 @@ export default function ProjectsShowcase() {
                       {/* Project Image */}
                       <div className="relative overflow-hidden">
                         {index === 3 ? (
-                          // Special gallery for survey project
-                          <div className="h-80 lg:h-full bg-mining-dark p-2">
-                            <div className="grid grid-cols-2 gap-2 h-full">
-                              <div className="space-y-2">
-                                <img 
-                                  src={surveyRobotImage} 
-                                  alt="MAPK-1 Robot"
-                                  className="w-full h-32 object-cover rounded-lg"
-                                />
-                                <img 
-                                  src={surveyProcessImage} 
-                                  alt="Survey Process"
-                                  className="w-full h-32 object-cover rounded-lg"
-                                />
-                              </div>
+                          // Special scrollable gallery for survey project
+                          <div className="h-80 lg:h-full bg-mining-dark p-4">
+                            <div className="flex gap-3 h-full overflow-x-auto scrollbar-thin scrollbar-thumb-mining-orange scrollbar-track-mining-light">
+                              <img 
+                                src={surveyRobotImage} 
+                                alt="MAPK-1 Robot"
+                                className="flex-shrink-0 w-64 h-full object-cover rounded-lg"
+                              />
+                              <img 
+                                src={surveyProcessImage} 
+                                alt="Survey Process"
+                                className="flex-shrink-0 w-64 h-full object-cover rounded-lg"
+                              />
                               <img 
                                 src={surveyEquipmentImage} 
                                 alt="Equipment"
-                                className="w-full h-full object-cover rounded-lg"
+                                className="flex-shrink-0 w-64 h-full object-cover rounded-lg"
                               />
                             </div>
                           </div>

@@ -118,4 +118,36 @@
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 165, 0, 0.2);
   }
+  
+  /* Custom scrollbar styles */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thumb-mining-orange {
+    scrollbar-color: hsl(30 100% 50%) transparent;
+  }
+  
+  .scrollbar-track-mining-light {
+    scrollbar-color: hsl(30 100% 50%) hsl(0 0% 16.47%);
+  }
+  
+  /* Webkit scrollbar styles for better browser support */
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(0 0% 16.47%);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(30 100% 50%);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(28 100% 55%);
+  }
 }
