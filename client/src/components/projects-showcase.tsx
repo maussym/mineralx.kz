@@ -135,22 +135,26 @@ export default function ProjectsShowcase() {
                       <div className="relative overflow-hidden">
                         {index === 3 ? (
                           // Special gallery for survey project
-                          <div className="grid grid-cols-2 gap-2 p-4 bg-mining-dark">
-                            <img 
-                              src={surveyRobotImage} 
-                              alt="MAPK-1 Robot"
-                              className="w-full h-40 object-cover rounded-lg"
-                            />
-                            <img 
-                              src={surveyProcessImage} 
-                              alt="Survey Process"
-                              className="w-full h-40 object-cover rounded-lg"
-                            />
-                            <img 
-                              src={surveyEquipmentImage} 
-                              alt="Equipment"
-                              className="w-full h-40 object-cover rounded-lg col-span-2"
-                            />
+                          <div className="h-80 lg:h-full bg-mining-dark p-2">
+                            <div className="grid grid-cols-2 gap-2 h-full">
+                              <div className="space-y-2">
+                                <img 
+                                  src={surveyRobotImage} 
+                                  alt="MAPK-1 Robot"
+                                  className="w-full h-32 object-cover rounded-lg"
+                                />
+                                <img 
+                                  src={surveyProcessImage} 
+                                  alt="Survey Process"
+                                  className="w-full h-32 object-cover rounded-lg"
+                                />
+                              </div>
+                              <img 
+                                src={surveyEquipmentImage} 
+                                alt="Equipment"
+                                className="w-full h-full object-cover rounded-lg"
+                              />
+                            </div>
                           </div>
                         ) : (
                           <img 
