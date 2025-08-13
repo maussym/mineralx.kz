@@ -1,37 +1,63 @@
 import { motion } from "framer-motion";
 import { 
+  Shield, 
   Zap, 
-  Factory, 
-  Monitor, 
-  Wrench,
-  Building,
-  Truck
+  Search, 
+  Thermometer,
+  Eye,
+  Activity
 } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+import robotImage from "@assets/image_1755069128744.png";
+import conveyorImage from "@assets/image_1755069138987.png";
+import scannerImage from "@assets/image_1755069151056.png";
 
 export default function ProjectsShowcase() {
-  // Placeholder structure for projects - will be populated with real data
   const projects = [
     {
-      icon: Zap,
-      title: "Цифровизация Производства",
-      description: "Внедрение современных систем управления производственными процессами",
-      status: "В разработке",
-      technologies: ["IoT", "AI", "Cloud Computing"]
+      icon: Shield,
+      title: "Взрывозащищенный робот для мониторинга",
+      subtitle: "Производственные зоны повышенной опасности",
+      description: "Интеллектуальный контроль опасных зон, пунктов сбора легковоспламеняющихся, взрывоопасных, токсичных веществ, химических предприятий и подземных помещений.",
+      features: [
+        "Инфракрасное измерение температуры оборудования",
+        "Обнаружение утечек вещества",
+        "Мониторинг загазованности и запыленности",
+        "Система рельсов для автономного перемещения 24/7"
+      ],
+      image: robotImage,
+      company: "Turan Telematika",
+      status: "Активный"
     },
     {
-      icon: Factory,
-      title: "Автоматизация Горнодобычи",
-      description: "Комплексная автоматизация горнодобывающих операций",
-      status: "Активный",
-      technologies: ["Робототехника", "Машинное обучение", "Сенсоры"]
+      icon: Thermometer,
+      title: "Тепловизионная система предотвращения",
+      subtitle: "Порыва конвейерной ленты",
+      description: "Революционная технология с эффективностью выше существующих решений (20-30%). Предотвращает миллионные убытки от простоев производства.",
+      features: [
+        "Непрерывное тепловизионное сканирование",
+        "Программно-аппаратный комплекс",
+        "Подтвержденная эффективность в реальных условиях",
+        "Неприхотливость в эксплуатации"
+      ],
+      image: conveyorImage,
+      company: "Turan Telematika",
+      status: "Внедрен"
     },
     {
-      icon: Monitor,
-      title: "Система Мониторинга",
-      description: "Платформа для мониторинга оборудования в реальном времени",
-      status: "Завершен",
-      technologies: ["Телематика", "Big Data", "Dashboard"]
+      icon: Search,
+      title: "Сканер для бесконтактной оценки",
+      subtitle: "Состояния футеровки и наполняемости сталь-ковшей",
+      description: "Замена ручной инспекции (99% случаев) автоматизированным решением. Устранение простоев и убытков от неэффективного контроля.",
+      features: [
+        "Непрерывное сканирование каждые 8 секунд",
+        "Online измерение состояния футеровки",
+        "Технологии лидара и машинного зрения",
+        "Портативная подвесная конструкция"
+      ],
+      image: scannerImage,
+      company: "Turan Telematika",
+      status: "В разработке"
     }
   ];
 
@@ -41,7 +67,7 @@ export default function ProjectsShowcase() {
         return "text-green-400 bg-green-400/20";
       case "В разработке":
         return "text-yellow-400 bg-yellow-400/20";
-      case "Завершен":
+      case "Внедрен":
         return "text-blue-400 bg-blue-400/20";
       default:
         return "text-gray-400 bg-gray-400/20";
@@ -68,7 +94,7 @@ export default function ProjectsShowcase() {
           <div className="w-24 h-1 mining-gradient mx-auto rounded-full mt-6" />
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-1 gap-12">
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
@@ -78,37 +104,60 @@ export default function ProjectsShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 data-testid={`project-${index}`}
               >
-                <Card className="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 h-full">
+                <Card className="glass-morphism rounded-2xl overflow-hidden hover:scale-102 transition-all duration-300">
                   <CardContent className="p-0">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center">
-                        <IconComponent className="text-black" size={24} />
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      {/* Project Image */}
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-80 lg:h-full object-cover"
+                        />
+                        <div className="absolute top-4 right-4">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
+                            {project.status}
+                          </span>
+                        </div>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
-                        {project.status}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold mb-3 gradient-text">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-4">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex}
-                          className="px-2 py-1 bg-mining-orange/20 text-mining-orange rounded text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      
+                      {/* Project Content */}
+                      <div className="p-8">
+                        <div className="flex items-center mb-4">
+                          <div className="w-16 h-16 mining-gradient rounded-xl flex items-center justify-center mr-4">
+                            <IconComponent className="text-black" size={32} />
+                          </div>
+                          <div>
+                            <p className="text-mining-orange text-sm font-medium mb-1">{project.company}</p>
+                            <h3 className="text-2xl font-bold gradient-text">
+                              {project.title}
+                            </h3>
+                            <p className="text-mining-gold text-lg font-medium">
+                              {project.subtitle}
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <p className="text-gray-300 leading-relaxed mb-6">
+                          {project.description}
+                        </p>
+                        
+                        <div className="space-y-3">
+                          <h4 className="text-lg font-semibold text-mining-orange">Ключевые возможности:</h4>
+                          {project.features.map((feature, featureIndex) => (
+                            <div 
+                              key={featureIndex}
+                              className="flex items-start"
+                            >
+                              <div className="w-2 h-2 mining-gradient rounded-full mr-3 mt-2 flex-shrink-0" />
+                              <span className="text-gray-300">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
