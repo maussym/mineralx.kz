@@ -9,12 +9,6 @@ import {
   MapPin
 } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
-import robotImage from "@assets/image_1755069128744.png";
-import conveyorImage from "@assets/image_1755069138987.png";
-import scannerImage from "@assets/image_1755069151056.png";
-import surveyRobotImage from "@assets/image_1755069412818.png";
-import surveyProcessImage from "@assets/image_1755069426916.png";
-import surveyEquipmentImage from "@assets/image_1755069446687.png";
 
 export default function ProjectsShowcase() {
   const projects = [
@@ -29,7 +23,6 @@ export default function ProjectsShowcase() {
         "Мониторинг загазованности и запыленности",
         "Система рельсов для автономного перемещения 24/7"
       ],
-      image: robotImage,
       company: "Turan Telematika",
       status: "Активный"
     },
@@ -44,7 +37,6 @@ export default function ProjectsShowcase() {
         "Подтвержденная эффективность в реальных условиях",
         "Неприхотливость в эксплуатации"
       ],
-      image: conveyorImage,
       company: "Turan Telematika",
       status: "Внедрен"
     },
@@ -59,7 +51,6 @@ export default function ProjectsShowcase() {
         "Технологии лидара и машинного зрения",
         "Портативная подвесная конструкция"
       ],
-      image: scannerImage,
       company: "Turan Telematika",
       status: "В разработке"
     },
@@ -76,7 +67,6 @@ export default function ProjectsShowcase() {
         "Более точный расчет объемов и сопоставление план-факт",
         "3D-визуализация и оперативное измерение параметров"
       ],
-      image: surveyRobotImage,
       company: "Turan Telematika",
       status: "Активный"
     }
@@ -130,53 +120,9 @@ export default function ProjectsShowcase() {
               >
                 <Card className="glass-morphism rounded-2xl overflow-hidden hover:scale-102 transition-all duration-300">
                   <CardContent className="p-0">
-                    <div className="grid lg:grid-cols-2 gap-0">
-                      {/* Project Image */}
-                      <div className="relative overflow-hidden">
-                        {index === 3 ? (
-                          // Special scrollable gallery for survey project
-                          <div className="h-80 lg:h-full bg-mining-dark relative">
-                            <div className="flex gap-0 h-full overflow-x-auto scrollbar-thin scrollbar-thumb-mining-orange scrollbar-track-mining-light snap-x snap-mandatory">
-                              <img 
-                                src={surveyRobotImage} 
-                                alt="MAPK-1 Robot"
-                                className="flex-shrink-0 w-full h-full object-cover snap-start"
-                              />
-                              <img 
-                                src={surveyProcessImage} 
-                                alt="Survey Process"
-                                className="flex-shrink-0 w-full h-full object-cover snap-start"
-                              />
-                              <img 
-                                src={surveyEquipmentImage} 
-                                alt="Equipment"
-                                className="flex-shrink-0 w-full h-full object-cover snap-start"
-                              />
-                            </div>
-                            {/* Navigation dots */}
-                            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                              <div className="w-2 h-2 bg-mining-orange rounded-full opacity-80"></div>
-                              <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                              <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                            </div>
-                          </div>
-                        ) : (
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
-                            className="w-full h-80 lg:h-full object-cover"
-                          />
-                        )}
-                        <div className="absolute top-4 right-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
-                            {project.status}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      {/* Project Content */}
-                      <div className="p-8">
-                        <div className="flex items-center mb-4">
+                    <div className="p-8">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center">
                           <div className="w-16 h-16 mining-gradient rounded-xl flex items-center justify-center mr-4">
                             <IconComponent className="text-black" size={32} />
                           </div>
@@ -190,39 +136,42 @@ export default function ProjectsShowcase() {
                             </p>
                           </div>
                         </div>
-                        
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                          {project.description}
-                        </p>
-                        
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-mining-orange">
-                            {index === 3 ? "Преимущества технологии:" : "Ключевые возможности:"}
-                          </h4>
-                          {project.features.map((feature, featureIndex) => (
-                            <div 
-                              key={featureIndex}
-                              className="flex items-start"
-                            >
-                              <div className="w-2 h-2 mining-gradient rounded-full mr-3 mt-2 flex-shrink-0" />
-                              <span className="text-gray-300">{feature}</span>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
+                          {project.status}
+                        </span>
+                      </div>
+
+                      <p className="text-gray-300 leading-relaxed mb-6">
+                        {project.description}
+                      </p>
+
+                      <div className="space-y-3">
+                        <h4 className="text-lg font-semibold text-mining-orange">
+                          {index === 3 ? "Преимущества технологии:" : "Ключевые возможности:"}
+                        </h4>
+                        {project.features.map((feature, featureIndex) => (
+                          <div 
+                            key={featureIndex}
+                            className="flex items-start"
+                          >
+                            <div className="w-2 h-2 mining-gradient rounded-full mr-3 mt-2 flex-shrink-0" />
+                            <span className="text-gray-300">{feature}</span>
+                          </div>
+                        ))}
+
+                        {index === 3 && (
+                          <div className="mt-6 p-4 bg-mining-orange/10 rounded-lg border border-mining-orange/20">
+                            <h5 className="text-mining-orange font-semibold mb-2">MAPK-1 Преимущества:</h5>
+                            <div className="grid grid-cols-2 gap-2 text-sm text-gray-300">
+                              <div>• Более точный расчет объемов</div>
+                              <div>• Сопоставление плана и факта</div>
+                              <div>• Определение отклонений</div>
+                              <div>• Расчет объема переотбойки</div>
+                              <div>• Оперативное измерение</div>
+                              <div>• 3D-визуализация</div>
                             </div>
-                          ))}
-                          
-                          {index === 3 && (
-                            <div className="mt-6 p-4 bg-mining-orange/10 rounded-lg border border-mining-orange/20">
-                              <h5 className="text-mining-orange font-semibold mb-2">MAPK-1 Преимущества:</h5>
-                              <div className="grid grid-cols-2 gap-2 text-sm text-gray-300">
-                                <div>• Более точный расчет объемов</div>
-                                <div>• Сопоставление плана и факта</div>
-                                <div>• Определение отклонений</div>
-                                <div>• Расчет объема переотбойки</div>
-                                <div>• Оперативное измерение</div>
-                                <div>• 3D-визуализация</div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>

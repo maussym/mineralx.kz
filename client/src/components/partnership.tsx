@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Users, BookOpen, Lightbulb, Target, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import nazarbayevLogo from "@assets/image_1755070509295.png";
 
 export default function Partnership() {
   const partnershipAreas = [
@@ -61,22 +60,13 @@ export default function Partnership() {
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* University Info */}
                 <div className="p-8 lg:p-12">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-6 p-2">
-                      <img 
-                        src={nazarbayevLogo} 
-                        alt="Nazarbayev University"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl lg:text-3xl font-bold gradient-text mb-2">
-                        Nazarbayev University
-                      </h3>
-                      <p className="text-mining-orange font-semibold">
-                        Стратегический партнер
-                      </p>
-                    </div>
+                  <div className="mb-6">
+                    <h3 className="text-2xl lg:text-3xl font-bold gradient-text mb-2">
+                      Nazarbayev University
+                    </h3>
+                    <p className="text-mining-orange font-semibold">
+                      Стратегический партнер
+                    </p>
                   </div>
                   
                   <p className="text-gray-300 text-lg leading-relaxed mb-6">
