@@ -57,13 +57,6 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button 
-              className="mining-gradient px-8 py-4 rounded-lg font-semibold text-black hover:scale-105 transition-transform duration-300 animate-pulse-glow"
-              data-testid="button-join-association"
-            >
-              <Rocket className="mr-2" size={20} />
-              Присоединиться к Ассоциации
-            </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("mission")}

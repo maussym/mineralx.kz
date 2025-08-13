@@ -29,8 +29,7 @@ export default function Navigation() {
     { id: "objectives", label: "Цели" },
     { id: "members", label: "Участники" },
     { id: "projects", label: "Проекты" },
-    { id: "benefits", label: "Преимущества" },
-    { id: "contact", label: "Контакты" },
+    { id: "benefits", label: "Преимущества" }
   ];
 
   return (
