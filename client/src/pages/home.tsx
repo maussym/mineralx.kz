@@ -6,7 +6,7 @@ import KeyObjectives from "../components/key-objectives";
 import MemberCompanies from "../components/member-companies";
 import ProjectsShowcase from "../components/projects-showcase";
 import Benefits from "../components/benefits";
-import ContactForm from "../components/contact-form";
+
 import Footer from "../components/footer";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <MemberCompanies />
       <ProjectsShowcase />
       <Benefits />
-      <ContactForm />
+
       <Footer />
     </div>
   );

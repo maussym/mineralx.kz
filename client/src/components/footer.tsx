@@ -53,7 +53,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center">
                 <MapPin className="mr-2 text-mining-orange" size={16} />
-                <span data-testid="text-location">Алматы, Казахстан</span>
+                <span data-testid="text-location">г. Астана, Казахстан</span>
               </p>
             </div>
           </motion.div>
