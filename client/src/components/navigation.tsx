@@ -28,6 +28,7 @@ export default function Navigation() {
     { id: "trends", label: "Тренды" },
     { id: "objectives", label: "Цели" },
     { id: "members", label: "Участники" },
+    { id: "projects", label: "Проекты" },
     { id: "benefits", label: "Преимущества" },
     { id: "contact", label: "Контакты" },
   ];
