@@ -4,7 +4,8 @@ import {
   Network, 
   Medal, 
   Trophy, 
-  Puzzle 
+  Puzzle,
+  Shield
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -34,11 +35,16 @@ export default function Benefits() {
       icon: Puzzle,
       title: "Совместные Решения",
       description: "Совместное решение сложных отраслевых задач и вызовов"
+    },
+    {
+      icon: Shield,
+      title: "Безопасность и Надёжность",
+      description: "Высокие стандарты кибербезопасности и надёжная инфраструктура"
     }
   ];
 
   return (
-    <section id="benefits" className="py-20 bg-gradient-to-br from-mining-dark to-black">
+    <section id="benefits" className="pt-20 pb-28 bg-gradient-to-br from-mining-dark to-black overflow-visible">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"

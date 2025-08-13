@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineralX - Цифровая Горная Добыча и Металлургия</title>
+    <meta name="description" content="Ассоциация MineralX объединяет лидеров цифровых технологий и промышленных гигантов для ускорения цифровой трансформации горнодобывающей отрасли">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'mining-orange': '#FFA500',
+                    'mining-gold': '#FFD700',
+                    'mining-amber': '#FF8C00',
+                    'mining-dark': '#0a0a0a',
+                    'mining-gray': '#1a1a1a',
+                    'mining-light': '#2a2a2a'
+                },
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif']
+                },
+                animation: {
+                    'fade-in': 'fadeIn 0.8s ease-in-out',
+                    'slide-up': 'slideUp 0.6s ease-out',
+                    'pulse-glow': 'pulseGlow 2s infinite',
+                    'float': 'float 3s ease-in-out infinite'
+                },
+                keyframes: {
+                    fadeIn: {
+                        '0%': { opacity: '0', transform: 'translateY(20px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' }
+                    },
+                    slideUp: {
+                        '0%': { opacity: '0', transform: 'translateY(40px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' }
+                    },
+                    pulseGlow: {
+                        '0%, 100%': { boxShadow: '0 0 20px rgba(255, 165, 0, 0.3)' },
+                        '50%': { boxShadow: '0 0 40px rgba(255, 165, 0, 0.6)' }
+                    },
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-10px)' }
+                    }
+                }
+            }
+        }
+    };
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mining-gradient {
+            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 50%, #FFD700 100%);
+        }
+        .industrial-pattern {
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(255, 165, 0, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .glass-morphism {
+            background: rgba(42, 42, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-inter overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-morphism transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-mountain text-mining-orange text-2xl"></i>
+                    <span class="text-xl font-bold gradient-text">MineralX</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#mission" class="hover:text-mining-orange transition-colors duration-300">Миссия</a>
+                    <a href="#trends" class="hover:text-mining-orange transition-colors duration-300">Тренды</a>
+                    <a href="#objectives" class="hover:text-mining-orange transition-colors duration-300">Цели</a>
+                    <a href="#members" class="hover:text-mining-orange transition-colors duration-300">Участники</a>
+                    <a href="#benefits" class="hover:text-mining-orange transition-colors duration-300">Преимущества</a>
+                    <a href="#contact" class="hover:text-mining-orange transition-colors duration-300">Контакты</a>
+                </div>
+                
+                <button class="md:hidden text-mining-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center industrial-pattern">
+        <!-- Mining equipment silhouette background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-black via-mining-dark to-mining-gray opacity-90"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">MineralX</span><br>
+                    <span class="text-3xl md:text-5xl text-gray-300">Цифровая Трансформация</span><br>
+                    <span class="text-2xl md:text-4xl text-gray-400">Горной Промышленности</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Объединяем лидеров цифровых технологий и промышленных гигантов для создания 
+                    будущего горнодобывающей и металлургической отраслей
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="mining-gradient px-8 py-4 rounded-lg font-semibold text-black hover:scale-105 transition-transform duration-300 animate-pulse-glow">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Присоединиться к Ассоциации
+                    </button>
+                    <a href="#mission" class="border-2 border-mining-orange px-8 py-4 rounded-lg font-semibold hover:bg-mining-orange hover:text-black transition-all duration-300">
+                        <i class="fas fa-arrow-down mr-2"></i>
+                        Узнать больше
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating mining icons -->
+        <div class="absolute inset-0 pointer-events-none">
+            <i class="fas fa-cogs absolute top-20 left-10 text-mining-orange opacity-20 text-4xl animate-float"></i>
+            <i class="fas fa-industry absolute top-40 right-20 text-mining-gold opacity-20 text-5xl animate-float" style="animation-delay: 1s;"></i>
+            <i class="fas fa-microchip absolute bottom-40 left-20 text-mining-amber opacity-20 text-3xl animate-float" style="animation-delay: 2s;"></i>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section id="mission" class="py-20 bg-gradient-to-br from-mining-dark to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Миссия и Видение</h2>
+                <div class="w-24 h-1 mining-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Mission Card -->
+                <div class="glass-morphism p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-slide-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-bullseye text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold gradient-text">Миссия</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Содействие всесторонней цифровизации горнодобывающей и металлургической 
+                        промышленности посредством коллаборации, обмена знаниями, разработки передовых 
+                        решений и внедрения лучших практик, обеспечивая устойчивое развитие и инновационный рост.
+                    </p>
+                </div>
+                
+                <!-- Vision Card -->
+                <div class="glass-morphism p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-eye text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold gradient-text">Видение</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Стать ведущей платформой, которая объединяет экспертизу и ресурсы для создания 
+                        экосистемы цифровых инноваций, способствующей становлению горнодобывающей и 
+                        металлургической промышленности как высокотехнологичной, безопасной и экологически 
+                        ответственной отрасли будущего.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Trends Section -->
+    <section id="trends" class="py-20 bg-mining-gray industrial-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Цифровые Тренды</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Две ключевые тенденции будут формировать ландшафт горнодобывающей промышленности в ближайшие 5 лет
+                </p>
+                <div class="w-24 h-1 mining-gradient mx-auto rounded-full mt-6"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Trend 1: Automation -->
+                <div class="glass-morphism p-8 rounded-2xl hover:scale-105 transition-all duration-300 animate-slide-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-robot text-black text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold gradient-text">Автономные Системы</h3>
+                            <p class="text-gray-400">Сквозная автоматизация</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        От беспилотных карьерных самосвалов и буровых установок до роботизированных 
+                        складских операций и автоматизированных линий переработки.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Бесперебойная работа 24/7</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Оптимизация логистики</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Минимизация рисков безопасности</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Снижение отходов и энергопотребления</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trend 2: AI & Analytics -->
+                <div class="glass-morphism p-8 rounded-2xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-black text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold gradient-text">ИИ и Аналитика</h3>
+                            <p class="text-gray-400">Продвинутый анализ данных</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Сбор и анализ огромных массивов данных для реализации предиктивного обслуживания, 
+                        оптимизации процессов и улучшения геологоразведки.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Предиктивное обслуживание</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Оптимизация в реальном времени</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Прогнозирование рисков</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 mining-gradient rounded-full mr-3"></div>
+                            <span class="text-gray-300">Экологическая оптимизация</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Objectives Section -->
+    <section id="objectives" class="py-20 bg-gradient-to-br from-black to-mining-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Ключевые Цели</h2>
+                <div class="w-24 h-1 mining-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Objective 1 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up">
+                    <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-lightbulb text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 gradient-text">Стимулирование Инноваций</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Поддержка исследований и разработок новых цифровых решений: ИИ, машинное обучение, IoT, большие данные и блокчейн
+                    </p>
+                </div>
+                
+                <!-- Objective 2 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-exchange-alt text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 gradient-text">Обмен Знаниями</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Создание площадки для обмена передовым опытом, технологиями и проведение образовательных программ
+                    </p>
+                </div>
+                
+                <!-- Objective 3 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-award text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 gradient-text">Стандартизация</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Разработка единых стандартов и лучших практик цифровизации для обеспечения совместимости решений
+                    </p>
+                </div>
+                
+                <!-- Objective 4 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-handshake text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 gradient-text">Коллаборация</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Содействие созданию совместных проектов и стратегических партнерств между технологическими компаниями
+                    </p>
+                </div>
+                
+                <!-- Objective 5 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-chart-line text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 gradient-text">Привлечение Инвестиций</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Привлечение инвестиций в цифровые проекты и стартапы, направленные на развитие отрасли
+                    </p>
+                </div>
+                
+                <!-- Objective 6 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.5s;">
+                    <div class="w-16 h-16 mining-gradient rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-shield-alt text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 gradient-text">Представительство</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Защита и продвижение интересов участников на государственном и международном уровнях
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Companies Section -->
+    <section id="members" class="py-20 bg-mining-gray industrial-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Компании-Участники</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ведущие компании, каждая из которых вносит свой уникальный вклад в цифровую трансформацию
+                </p>
+                <div class="w-24 h-1 mining-gradient mx-auto rounded-full mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Company 1: Wintel -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cloud text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Wintel</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Комплексные IT-решения, облачные технологии, инфраструктурные сервисы и кибербезопасность
+                    </p>
+                </div>
+                
+                <!-- Company 2: Win X -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-bar text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Win X</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Передовые решения для анализа данных, оптимизации процессов и систем управления производством
+                    </p>
+                </div>
+                
+                <!-- Company 3: Turan Telematika -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-satellite-dish text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Turan Telematika</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Телематические системы, мониторинг транспорта и оборудования для повышения операционной эффективности
+                    </p>
+                </div>
+                
+                <!-- Company 4: Core24 -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cogs text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Core24</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Специализированные программные продукты для управления активами, производственного планирования и диспетчеризации
+                    </p>
+                </div>
+                
+                <!-- Company 5: CyberX -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">CyberX</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Кибербезопасность промышленных систем и защита критически важной инфраструктуры
+                    </p>
+                </div>
+                
+                <!-- Company 6: QR Systems -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.5s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-qrcode text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">QR Systems</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Инновационные решения для автоматизации учета, логистики и управления цепочками поставок
+                    </p>
+                </div>
+                
+                <!-- Company 7: Mitwork -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-shopping-cart text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Mitwork</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Платформа управления закупками, специализирующаяся на горнодобывающей индустрии
+                    </p>
+                </div>
+                
+                <!-- Company 8: МЭК-Астана -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.7s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-industry text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">МЭК-Астана</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Крупная инжиниринговая компания с глубокой экспертизой в проектировании и модернизации промышленных объектов
+                    </p>
+                </div>
+                
+                <!-- Company 9: Akashi Data Center -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.8s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-database text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Akashi Data Center</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Современные услуги по хранению, обработке и управлению большими данными с надежной инфраструктурой
+                    </p>
+                </div>
+                
+                <!-- Company 10: Redline Digital -->
+                <div class="glass-morphism p-6 rounded-xl hover:scale-105 hover:border-mining-orange transition-all duration-300 animate-slide-up" style="animation-delay: 0.9s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 mining-gradient rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-microchip text-black text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text">Redline Digital</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Передовые решения по электронному оборудованию для шахт: сенсоры, системы связи и автоматизации
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gradient-to-br from-mining-dark to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Преимущества Участия</h2>
+                <div class="w-24 h-1 mining-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="glass-morphism p-8 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up">
+                    <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-rocket text-black text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 gradient-text">Передовые Технологии</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Доступ к инновационным технологиям и решениям от ведущих компаний отрасли
+                    </p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="glass-morphism p-8 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-network-wired text-black text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 gradient-text">Деловые Связи</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Расширение деловых связей и создание новых стратегических партнерств
+                    </p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="glass-morphism p-8 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-medal text-black text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 gradient-text">Отраслевые Стандарты</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Участие в формировании отраслевых стандартов и лучших практик
+                    </p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="glass-morphism p-8 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-trophy text-black text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 gradient-text">Конкурентоспособность</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Повышение конкурентоспособности и рыночной стоимости компании
+                    </p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="glass-morphism p-8 rounded-xl hover:scale-105 transition-all duration-300 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 mining-gradient rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-puzzle-piece text-black text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 gradient-text">Совместные Решения</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Совместное решение сложных отраслевых задач и вызовов
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-mining-gray industrial-pattern">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Присоединяйтесь к MineralX</h2>
+                <p class="text-xl text-gray-300">
+                    Станьте частью будущего горнодобывающей и металлургической промышленности
+                </p>
+                <div class="w-24 h-1 mining-gradient mx-auto rounded-full mt-6"></div>
+            </div>
+            
+            <div class="glass-morphism p-8 rounded-2xl animate-slide-up">
+                <form class="space-y-6" data-implementation="Should integrate with email service or CRM">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Название компании</label>
+                            <input type="text" data-mock="true" placeholder="ООО 'Название компании'" 
+                                   class="w-full px-4 py-3 bg-mining-light border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-mining-orange transition-colors duration-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Контактное лицо</label>
+                            <input type="text" data-mock="true" placeholder="Иван Иванов" 
+                                   class="w-full px-4 py-3 bg-mining-light border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-mining-orange transition-colors duration-300">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" data-mock="true" placeholder="contact@company.com" 
+                                   class="w-full px-4 py-3 bg-mining-light border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-mining-orange transition-colors duration-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Телефон</label>
+                            <input type="tel" data-mock="true" placeholder="+7 (777) 123-45-67" 
+                                   class="w-full px-4 py-3 bg-mining-light border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-mining-orange transition-colors duration-300">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Область деятельности</label>
+                        <select data-mock="true" class="w-full px-4 py-3 bg-mining-light border border-gray-600 rounded-lg text-white focus:outline-none focus:border-mining-orange transition-colors duration-300">
+                            <option>Выберите область деятельности</option>
+                            <option>IT-решения и цифровизация</option>
+                            <option>Горнодобывающая промышленность</option>
+                            <option>Металлургия</option>
+                            <option>Инжиниринг и консалтинг</option>
+                            <option>Автоматизация и робототехника</option>
+                            <option>Аналитика данных и ИИ</option>
+                            <option>Кибербезопасность</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Сообщение</label>
+                        <textarea rows="4" data-mock="true" placeholder="Расскажите о вашей компании и интересе к участию в ассоциации MineralX..." 
+                                  class="w-full px-4 py-3 bg-mining-light border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-mining-orange transition-colors duration-300 resize-none"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" data-event="click:handleFormSubmit" data-implementation="Should validate form and send to backend"
+                                class="mining-gradient px-8 py-4 rounded-lg font-semibold text-black hover:scale-105 transition-transform duration-300 animate-pulse-glow">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Отправить заявку
+                        </button>
+                    </div>
+                    
+                    <p class="text-sm text-gray-400 text-center">
+                        Нажимая кнопку "Отправить заявку", вы соглашаетесь с обработкой персональных данных
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black border-t border-mining-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-mountain text-mining-orange text-2xl"></i>
+                        <span class="text-2xl font-bold gradient-text">MineralX</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Цифровая трансформация горнодобывающей и металлургической промышленности
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Контакты</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-envelope mr-2 text-mining-orange"></i>info@mineralx.kz</p>
+                        <p><i class="fas fa-phone mr-2 text-mining-orange"></i>+7 (777) 123-45-67</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-mining-orange"></i>Алматы, Казахстан</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Следите за нами</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-mining-light rounded-full flex items-center justify-center hover:bg-mining-orange hover:text-black transition-all duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-mining-light rounded-full flex items-center justify-center hover:bg-mining-orange hover:text-black transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-mining-light rounded-full flex items-center justify-center hover:bg-mining-orange hover:text-black transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-mining-light mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 MineralX - Digital Mining & Metallurgy. Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // TODO: Implement smooth scrolling navigation
+            // TODO: Add intersection observer for animations
+            // TODO: Implement form validation and submission
+            // TODO: Add loading states and error handling
+            
+            // Simple scroll-to-section functionality
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Simple navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+                } else {
+                    nav.style.backgroundColor = 'rgba(42, 42, 42, 0.8)';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
