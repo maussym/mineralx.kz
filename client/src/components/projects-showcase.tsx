@@ -86,7 +86,7 @@ export default function ProjectsShowcase() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-black to-mining-dark">
+    <section id="projects" className="py-16 md:py-20 bg-gradient-to-br from-black to-mining-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -96,16 +96,16 @@ export default function ProjectsShowcase() {
           viewport={{ once: true }}
           data-testid="projects-header"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text">
             Наши Проекты
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto">
             Реализованные и текущие проекты цифровой трансформации в горнодобывающей отрасли
           </p>
           <div className="w-24 h-1 mining-gradient mx-auto rounded-full mt-6" />
         </motion.div>
         
-        <div className="grid lg:grid-cols-1 gap-12">
+        <div className="grid grid-cols-1 gap-8 md:gap-12">
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
@@ -120,18 +120,18 @@ export default function ProjectsShowcase() {
               >
                 <Card className="glass-morphism rounded-2xl overflow-hidden hover:scale-102 transition-all duration-300">
                   <CardContent className="p-0">
-                    <div className="p-8">
-                      <div className="flex items-start justify-between mb-4">
+                    <div className="p-5 md:p-8">
+                      <div className="flex items-start justify-between mb-4 gap-3 flex-wrap">
                         <div className="flex items-center">
-                          <div className="w-16 h-16 mining-gradient rounded-xl flex items-center justify-center mr-4">
-                            <IconComponent className="text-black" size={32} />
+                          <div className="w-12 h-12 md:w-16 md:h-16 mining-gradient rounded-xl flex items-center justify-center mr-4">
+                            <IconComponent className="text-black" size={24} />
                           </div>
-                          <div>
-                            <p className="text-mining-orange text-sm font-medium mb-1">{project.company}</p>
-                            <h3 className="text-2xl font-bold gradient-text">
+                          <div className="text-left">
+                            <p className="text-mining-orange text-xs md:text-sm font-medium mb-1 break-words">{project.company}</p>
+                            <h3 className="text-xl md:text-2xl font-bold gradient-text break-words">
                               {project.title}
                             </h3>
-                            <p className="text-mining-gold text-lg font-medium">
+                            <p className="text-mining-gold text-base md:text-lg font-medium break-words">
                               {project.subtitle}
                             </p>
                           </div>
@@ -141,12 +141,12 @@ export default function ProjectsShowcase() {
                         </span>
                       </div>
 
-                      <p className="text-gray-300 leading-relaxed mb-6">
+                      <p className="text-gray-300 leading-relaxed mb-6 text-sm md:text-base break-words">
                         {project.description}
                       </p>
 
                       <div className="space-y-3">
-                        <h4 className="text-lg font-semibold text-mining-orange">
+                        <h4 className="text-base md:text-lg font-semibold text-mining-orange">
                           {index === 3 ? "Преимущества технологии:" : "Ключевые возможности:"}
                         </h4>
                         {project.features.map((feature, featureIndex) => (
@@ -155,14 +155,14 @@ export default function ProjectsShowcase() {
                             className="flex items-start"
                           >
                             <div className="w-2 h-2 mining-gradient rounded-full mr-3 mt-2 flex-shrink-0" />
-                            <span className="text-gray-300">{feature}</span>
+                            <span className="text-gray-300 text-sm md:text-base break-words">{feature}</span>
                           </div>
                         ))}
 
                         {index === 3 && (
                           <div className="mt-6 p-4 bg-mining-orange/10 rounded-lg border border-mining-orange/20">
                             <h5 className="text-mining-orange font-semibold mb-2">MAPK-1 Преимущества:</h5>
-                            <div className="grid grid-cols-2 gap-2 text-sm text-gray-300">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-300">
                               <div>• Более точный расчет объемов</div>
                               <div>• Сопоставление плана и факта</div>
                               <div>• Определение отклонений</div>
