@@ -168,7 +168,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               type="email"
-                              placeholder="contact@company.com"
+                              placeholder="Kuat@telematika.kz"
                               className="bg-mining-light border-gray-600 text-white placeholder-gray-400 focus:border-mining-orange"
                               data-testid="input-email"
                               {...field}
@@ -190,7 +190,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               type="tel"
-                              placeholder="+7 (777) 123-45-67"
+                              placeholder="+7 (771) 022-88-88"
                               className="bg-mining-light border-gray-600 text-white placeholder-gray-400 focus:border-mining-orange"
                               data-testid="input-phone"
                               {...field}
